@@ -54,14 +54,16 @@ function App() {
             onClick={() => setLanguage('en')}
             title="English"
           >
-            🇺🇸
+            <span className="flag-icon">🇺🇸</span>
+            <span className="lang-code">EN</span>
           </button>
           <button 
             className={`language-button ${language === 'pt' ? 'active' : ''}`}
             onClick={() => setLanguage('pt')}
             title="Português"
           >
-            🇧🇷
+            <span className="flag-icon">🇧🇷</span>
+            <span className="lang-code">BR</span>
           </button>
         </div>
         
