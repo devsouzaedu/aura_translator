@@ -32,28 +32,6 @@
   margin-bottom: 20px;
 }
 
-.language-button {
-  font-size: 1.8rem;
-  padding: 8px 12px;
-  border: 2px solid #333;
-  border-radius: 8px;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  filter: grayscale(70%) opacity(0.6);
-}
-
-.language-button:hover {
-  transform: scale(1.1);
-  filter: grayscale(0%) opacity(1);
-  border-color: #ffffff;
-}
-
-.language-button.active {
-  filter: grayscale(0%) opacity(1);
-  border-color: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
 
 @keyframes fadeIn {
   from {
