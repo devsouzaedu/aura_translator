@@ -1,9 +1,35 @@
 import { useState } from 'react';
 import './App.css';
 
+const translations = {
+  en: {
+    title: '∩ura text tr∩nsl∩tor',
+    subtitle: 'Replace all "A"s in your text with "∩"s',
+    placeholder: 'Type your text here...',
+    characters: 'characters',
+    button: 'Aurify my text',
+    outputTitle: 'Text ∩urified:',
+    copyButton: 'Copy text',
+    copied: 'Text copied!',
+    shareAura: 'Download Share Aura'
+  },
+  pt: {
+    title: '∩ura text tr∩nsl∩tor',
+    subtitle: 'Troque seus "A"s no seu texto por "∩"s',
+    placeholder: 'Digite seu texto aqui...',
+    characters: 'caracteres',
+    button: 'Aurify my text',
+    outputTitle: 'Texto ∩urific∩do:',
+    copyButton: 'Copiar texto',
+    copied: 'Texto copiado!',
+    shareAura: 'Baixe Share Aura'
+  }
+};
+
 function App() {
   const [inputText, setInputText] = useState('');
   const [outputText, setOutputText] = useState('');
+  const [language, setLanguage] = useState('en');
 
   const handleInputChange = (e) => {
     const text = e.target.value;
@@ -17,40 +43,59 @@ function App() {
     setOutputText(converted);
   };
 
+  const t = translations[language];
+
   return (
     <div className="container">
       <div className="card">
-        <h1 className="title">∩ura text tr∩nsl∩tor</h1>
-        <p className="subtitle">Troque seus "A"s no seu texto por "∩"s</p>
+        <div className="language-selector">
+          <button 
+            className={`language-button ${language === 'en' ? 'active' : ''}`}
+            onClick={() => setLanguage('en')}
+            title="English"
+          >
+            🇺🇸
+          </button>
+          <button 
+            className={`language-button ${language === 'pt' ? 'active' : ''}`}
+            onClick={() => setLanguage('pt')}
+            title="Português"
+          >
+            🇧🇷
+          </button>
+        </div>
+        
+        <h1 className="title">{t.title}</h1>
+        <p className="subtitle">{t.subtitle}</p>
         
         <textarea
           className="text-input"
-          placeholder="Digite seu texto aqui..."
+          placeholder={t.placeholder}
           value={inputText}
           onChange={handleInputChange}
           maxLength={300}
         />
         
         <div className="char-counter">
-          {inputText.length}/300 caracteres
+          {inputText.length}/300 {t.characters}
         </div>
         
         <button className="aurify-button" onClick={aurifyText}>
-          Aurify my text
+          {t.button}
         </button>
         
         {outputText && (
           <div className="output-section">
-            <h3 className="output-title">Texto ∩urific∩do:</h3>
+            <h3 className="output-title">{t.outputTitle}</h3>
             <div className="output-text">{outputText}</div>
             <button 
               className="copy-button"
               onClick={() => {
                 navigator.clipboard.writeText(outputText);
-                alert('Texto copiado!');
+                alert(t.copied);
               }}
             >
-              Copiar texto
+              {t.copyButton}
             </button>
           </div>
         )}
@@ -62,7 +107,7 @@ function App() {
             rel="noopener noreferrer"
             className="aura-app-button"
           >
-            Baixe Share Aura
+            {t.shareAura}
           </a>
         </div>
       </div>
