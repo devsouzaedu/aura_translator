@@ -54,7 +54,7 @@ function App() {
             onClick={() => setLanguage('en')}
             title="English"
           >
-            <span className="flag-icon">🇺🇸</span>
+            <img src="/usa_flag.png" alt="USA" className="flag-icon" />
             <span className="lang-code">EN</span>
           </button>
           <button 
@@ -62,7 +62,7 @@ function App() {
             onClick={() => setLanguage('pt')}
             title="Português"
           >
-            <span className="flag-icon">🇧🇷</span>
+            <img src="/br_flag.jpg" alt="Brazil" className="flag-icon" />
             <span className="lang-code">BR</span>
           </button>
         </div>
