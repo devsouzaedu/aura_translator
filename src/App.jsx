@@ -54,6 +54,17 @@ function App() {
             </button>
           </div>
         )}
+        
+        <div className="footer">
+          <a 
+            href="https://apps.apple.com/us/app/share-aura-share-your-runs/id6742422198" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="aura-app-button"
+          >
+            Baixe Share Aura
+          </a>
+        </div>
       </div>
     </div>
   );

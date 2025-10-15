@@ -9,18 +9,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #000000;
   padding: 20px;
 }
 
 .card {
-  background: white;
+  background: #1a1a1a;
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
   max-width: 600px;
   width: 100%;
   animation: fadeIn 0.5s ease-in;
+  border: 1px solid #333;
 }
 
 @keyframes fadeIn {
@@ -35,67 +36,78 @@
 }
 
 .title {
-  font-size: 2.5rem;
-  color: #667eea;
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.8rem;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 10px;
-  font-weight: 700;
-  letter-spacing: -1px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: #666;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.1rem;
+  color: #aaaaaa;
   text-align: center;
   margin-bottom: 30px;
   font-weight: 400;
+  font-style: italic;
 }
 
 .text-input {
   width: 100%;
   min-height: 150px;
   padding: 15px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #333;
   border-radius: 10px;
   font-size: 1rem;
-  font-family: inherit;
+  font-family: 'Instrument Serif', serif;
   resize: vertical;
   transition: border-color 0.3s ease;
-  background: #f9f9f9;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.text-input::placeholder {
+  color: #666;
 }
 
 .text-input:focus {
   outline: none;
-  border-color: #667eea;
-  background: white;
+  border-color: #ffffff;
+  background: #0a0a0a;
 }
 
 .char-counter {
   text-align: right;
   font-size: 0.85rem;
-  color: #999;
+  color: #666;
   margin-top: 5px;
   margin-bottom: 20px;
+  font-family: 'Instrument Serif', serif;
 }
 
 .aurify-button {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #ffffff;
+  color: #000000;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-family: 'Instrument Serif', serif;
 }
 
 .aurify-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+  background: #f0f0f0;
 }
 
 .aurify-button:active {
@@ -105,7 +117,7 @@
 .output-section {
   margin-top: 30px;
   padding-top: 30px;
-  border-top: 2px solid #e0e0e0;
+  border-top: 2px solid #333;
   animation: slideIn 0.3s ease-out;
 }
 
@@ -121,45 +133,82 @@
 }
 
 .output-title {
-  font-size: 1.3rem;
-  color: #667eea;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  color: #ffffff;
   margin-bottom: 15px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .output-text {
-  background: #f9f9f9;
+  background: #0a0a0a;
   padding: 20px;
   border-radius: 10px;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
+  color: #ffffff;
   word-wrap: break-word;
   margin-bottom: 15px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #333;
+  font-family: 'Instrument Serif', serif;
 }
 
 .copy-button {
   width: 100%;
   padding: 12px;
-  background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'Instrument Serif', serif;
 }
 
 .copy-button:hover {
-  background: #667eea;
-  color: white;
+  background: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .copy-button:active {
+  transform: translateY(0);
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #333;
+  display: flex;
+  justify-content: center;
+}
+
+.aura-app-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Instrument Serif', serif;
+  letter-spacing: 1px;
+}
+
+.aura-app-button:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.aura-app-button:active {
   transform: translateY(0);
 }
 
@@ -173,7 +222,6 @@
   }
   
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
-
